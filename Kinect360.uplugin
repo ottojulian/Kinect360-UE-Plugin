@@ -1,0 +1,27 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0.0",
+  "FriendlyName": "Kinect 360",
+  "Description": "Migration-friendly Kinect 360 runtime support for Unreal Engine 5.5.",
+  "Category": "Input Devices",
+  "CreatedBy": "ottojulian",
+  "CreatedByURL": "https://github.com/ottojulian",
+  "DocsURL": "https://github.com/ottojulian/Kinect360-UE-Plugin",
+  "MarketplaceURL": "",
+  "SupportURL": "https://github.com/ottojulian/Kinect360-UE-Plugin/issues",
+  "EnabledByDefault": true,
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "Kinect360",
+      "Type": "Runtime",
+      "LoadingPhase": "Default",
+      "WhitelistPlatforms": [
+        "Win64"
+      ]
+    }
+  ]
+}
