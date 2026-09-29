@@ -1,11 +1,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "Kinect360Types.h"
 #include "Kinect360BlueprintLibrary.generated.h"
 
 UCLASS()
-class UKinect360BlueprintLibrary : public UBlueprintFunctionLibrary
+class KINECT360_API UKinect360BlueprintLibrary : public UBlueprintFunctionLibrary
 {
     GENERATED_BODY()
 
@@ -14,11 +15,11 @@ public:
     static bool IsSupported();
 
     UFUNCTION(BlueprintCallable, Category = "Kinect360")
-    static void GetSensorStatus(EKinect360Status& OutStatus, FString& OutMessage);
-
-    UFUNCTION(BlueprintCallable, Category = "Kinect360")
     static bool StartSensor();
 
     UFUNCTION(BlueprintCallable, Category = "Kinect360")
     static void StopSensor();
+
+    UFUNCTION(BlueprintCallable, Category = "Kinect360")
+    static TArray<FKinect360SkeletonFrame> PollSkeletons();
 };

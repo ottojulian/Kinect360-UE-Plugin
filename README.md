@@ -12,7 +12,7 @@ This repository is intentionally organized as a clean runtime plugin so you can 
 
 ## Installation
 
-1. Copy this directory into your project:
+1. Copy this directory into your project's plugin folder:
 
 ```text
 <YourProject>/Plugins/Kinect360/
@@ -25,7 +25,7 @@ This repository is intentionally organized as a clean runtime plugin so you can 
 
 ## Important note about the Kinect SDK
 
-This plugin is designed to be easy to migrate and easy to maintain across Unreal Engine versions. It includes a compatibility layer and a clean API shell, but the actual Kinect hardware access still depends on the Microsoft Kinect for Windows SDK v1.8 being installed on your machine.
+This plugin requires the Microsoft Kinect for Windows SDK v1.8 being installed on your machine.
 
 Typical SDK install location:
 
@@ -41,15 +41,6 @@ C:\Program Files\Microsoft SDKs\Kinect\v1.8\
 - Compatibility/migration helpers for legacy Kinect code
 - Basic sensor abstraction layer to keep your game code from being tightly coupled to raw SDK calls
 
-## Migration strategy
-
-The goal is to keep your gameplay logic isolated from the native Kinect SDK implementation, so that future engine upgrades only require updating the plugin internals rather than rewriting your game systems.
-
-The main idea:
-
-- Game code talks to the plugin API
-- The plugin isolates platform and engine-specific implementation details
-- Compatibility wrappers reduce the risk of breaking existing behaviors when moving to a newer Unreal editor version
 
 ## Recommended project layout
 
@@ -70,6 +61,6 @@ YourProject/
 - If Windows-specific builds fail, verify that the Kinect SDK is installed and the `KINECTSDK10_DIR` environment variable is set or the default install path is present.
 - If the editor drops the plugin during engine upgrades, update the plugin build scripts and recompile the project.
 
-## License
+## MIT License
 
-MIT
+
